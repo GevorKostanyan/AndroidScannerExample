@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data class="AddUserBinding">
+
+        <import type="android.view.View" />
+
+        <variable
+            name="user"
+            type="am.test.user.usertest.data.UserData" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ScrollView
+            android:id="@+id/scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/button_save"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                tools:context="am.test.user.usertest.ui.AddUserActivity">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/user_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/form_name"
+                        android:text="@{user.getName()}" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/user_surname"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/form_surname"
+                        android:text="@{user.getSurname()}" />
+
+                </android.support.design.widget.TextInputLayout>
+
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/user_birth_day"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:cursorVisible="false"
+                    android:drawableRight="@android:drawable/ic_menu_my_calendar"
+                    android:editable="false"
+                    android:hint="@string/form_birthday"
+                    android:inputType="none"
+                    android:onClick="pickDate"
+                    app:birthday="@{user.getBirthDay()}" />
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/user_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/form_email"
+                        android:inputType="textEmailAddress"
+                        android:text="@{user.getEmail()}" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/user_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/form_phone"
+                        android:inputType="phone"
+                        android:text="@{user.getPhone()}" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@+id/gallery"
+                        android:layout_toStartOf="@+id/gallery"
+                        android:onClick="scanNewImage"
+                        android:text="@string/scan_files" />
+
+                    <Button
+                        android:id="@+id/gallery"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:background="@android:drawable/ic_menu_gallery"
+                        android:onClick="viewDocuments" />
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/image_view"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp" />
+            </LinearLayout>
+
+        </ScrollView>
+
+        <Button
+            android:id="@+id/button_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:onClick="save"
+            android:text="@string/save" />
+    </RelativeLayout>
+</layout>

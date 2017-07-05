@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data class="InfoItemBinding">
+
+        <variable
+            name="user"
+            type="am.test.user.usertest.data.UserData" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/list_selector_background"
+        android:clickable="true"
+        android:duplicateParentState="true"
+        android:minHeight="75dp"
+        android:padding="10dp"
+        android:layout_marginBottom="3dp">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.getName()}"
+            android:textSize="22sp"
+            tools:text="Name" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/name"
+            android:text="@{user.getSurname()}"
+            tools:text="Sur name" />
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">UserTest</string>
+    <string name="add_new_user">Add new user</string>
+    <string name="data_is_empty">Data is empty</string>
+    <string name="loading">Loading…</string>
+    <string name="info">Info</string>
+    <string name="form_name">Name</string>
+    <string name="form_birthday">Birthday</string>
+    <string name="form_surname">Surname</string>
+    <string name="form_email">Email</string>
+    <string name="form_phone">Phone</string>
+    <string name="save">Save</string>
+    <string name="scan_files">Scan image</string>
+    <string name="permission_denied">Permission denied!</string>
+    <string name="check_permission">Chech storage permission</string>
+</resources>
